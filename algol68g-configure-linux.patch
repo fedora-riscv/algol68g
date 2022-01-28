@@ -1,0 +1,11 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -201,7 +201,7 @@
+ # Linux.
+ #
+ # aarch64*-*-linux* is for RaspberryPi-4 on ARM-64 - otherwise http/tcp isnt found
+-*86-*-gnu | *86_64-*-gnu | *86-*-linux* | *86_64-*-linux* | arm*-*-linux* | aarch*-*-linux*) 
++*-gnu | *-linux*)
+   AC_DEFINE(BUILD_LINUX, 1, [Define this if LINUX was detected]) 
+   AC_DEFINE(HAVE_IEEE_754, 1, [Define this if IEEE_754 compliant])
+   AC_MSG_RESULT([linux])
