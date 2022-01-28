@@ -1,0 +1,22 @@
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -105,8 +105,8 @@
+ ./src/include/a68g-stddef.h \
+ ./src/include/a68g-transput.h \
+ ./src/include/a68g-types.h
+-includedir = /usr/local/include/algol68g
+-include_HEADERS = \
++a68g_includedir = $(pkgincludedir)
++a68g_include_HEADERS = \
+ ./a68g-config.h \
+ ./src/include/a68g-common.h \
+ ./src/include/a68g-compiler.h \
+@@ -142,7 +142,7 @@
+ ./src/include/a68g-transput.h \
+ ./src/include/a68g-types.h
+ bin_PROGRAMS = a68g
+-a68g_CFLAGS = -DBINDIR='"$(bindir)"' -DINCLUDEDIR='"$(includedir)"'
++a68g_CFLAGS = -DBINDIR='"$(bindir)"' -DINCLUDEDIR='"$(pkgincludedir)"'
+ a68g_CPPFLAGS = -I$(top_srcdir)/src/include
+ TESTS_ENVIRONMENT=./a68g
+ TESTS=\
